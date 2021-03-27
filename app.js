@@ -3,6 +3,7 @@ const Koa = require('koa')
 const json = require('koa-json')
 const KoaRouter = require('koa-router')
 const bodyParser = require('koa-bodyparser')
+const config = require('./config')
 
 // Koa app
 const app = new Koa()
@@ -31,7 +32,6 @@ app.on('error', function (error, ctx) {
 // Bind controllers to routes
 router.get('/', rootController.helloWorld)
 
-const PORT = process.env.port || 8000
-app.listen(PORT, function () {
-  console.log(`Successfully listen on port ${PORT}`)
+app.listen(config.env.port, function () {
+  console.log(`Successfully listen on port ${config.env.port}`)
 })
