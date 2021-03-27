@@ -11,7 +11,7 @@ const app = new Koa()
 const router = new KoaRouter()
 
 // Import controllers
-const rootController = require('./controllers/root.controller')
+const categoryController = require('./controllers/category.controller')
 
 // JSON prettier middleware
 app.use(json())
@@ -31,7 +31,7 @@ app.on('error', function (error, ctx) {
 })
 
 // Bind controllers to routes
-router.get('/', rootController.helloWorld)
+router.get('/category', categoryController.getAllCategories)
 
 app.listen(config.env.port, async function () {
   console.log(`Successfully listen on port ${config.env.port}`)
