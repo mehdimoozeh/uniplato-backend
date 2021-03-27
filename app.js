@@ -4,6 +4,7 @@ const json = require('koa-json')
 const KoaRouter = require('koa-router')
 const bodyParser = require('koa-bodyparser')
 const config = require('./config')
+const mysql = require('./dataSource/mysql')
 
 // Koa app
 const app = new Koa()
@@ -32,6 +33,12 @@ app.on('error', function (error, ctx) {
 // Bind controllers to routes
 router.get('/', rootController.helloWorld)
 
-app.listen(config.env.port, function () {
+app.listen(config.env.port, async function () {
   console.log(`Successfully listen on port ${config.env.port}`)
+  await mysql.connectToMysql(
+    config.env.mysql.host,
+    config.env.mysql.username,
+    config.env.mysql.password,
+    config.env.mysql.database
+  )
 })
