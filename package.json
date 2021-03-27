@@ -18,11 +18,17 @@
   },
   "homepage": "https://github.com/mohammadmoozeh/uniplato-backend#readme",
   "dependencies": {
-    "eslint": "^7.23.0",
+    "eslint": "^7.12.1",
+    "eslint-config-standard": "^16.0.2",
     "koa": "^2.13.1",
     "koa-bodyparser": "^4.3.0",
     "koa-json": "^2.0.2",
     "koa-router": "^10.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "standard": "^16.0.3"
+  }
 }
