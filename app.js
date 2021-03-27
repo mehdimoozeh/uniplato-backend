@@ -1,3 +1,4 @@
+'use strict'
 const Koa = require('koa')
 const json = require('koa-json')
 const KoaRouter = require('koa-router')
