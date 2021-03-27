@@ -32,6 +32,7 @@ app.on('error', function (error, ctx) {
 
 // Bind controllers to routes
 router.get('/category', categoryController.getAllCategories)
+router.patch('/category/:id/counter/:counter', categoryController.updateCategoryCounter)
 
 app.listen(config.env.port, async function () {
   console.log(`Successfully listen on port ${config.env.port}`)

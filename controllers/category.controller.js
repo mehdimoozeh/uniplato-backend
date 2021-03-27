@@ -11,5 +11,15 @@ async function getAllCategories (ctx) {
     return sendError.internal(ctx, err.message)
   }
 }
-
 exports.getAllCategories = getAllCategories
+
+async function updateCategoryCounter (ctx) {
+  try {
+    const { id, counter } = ctx.params
+    const categories = await modelCategory.updateCategoryCounter(id, counter)
+    return sendResponse.ok(ctx, categories)
+  } catch (err) {
+    return sendError.internal(ctx, err.message)
+  }
+}
+exports.updateCategoryCounter = updateCategoryCounter
