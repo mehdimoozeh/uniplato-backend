@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/mohammadmoozeh/uniplato-backend#readme",
   "dependencies": {
+    "ajv": "^8.0.0",
     "eslint": "^7.12.1",
     "eslint-config-standard": "^16.0.2",
     "koa": "^2.13.1",
