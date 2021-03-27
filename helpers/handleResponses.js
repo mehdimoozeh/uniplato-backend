@@ -1,10 +1,10 @@
 'use strict'
-const httpCodes = require('httpCodes')
+const httpCodes = require('./httpCodes')
 
 exports.ok = ok
 
 function ok (ctx, data) {
   ctx.response.status = httpCodes.status.ok
-  ctx.body = data
+  ctx.body = { msg: 'OK', payload: data }
   return ctx
 }

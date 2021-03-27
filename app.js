@@ -4,8 +4,12 @@ const json = require('koa-json')
 const KoaRouter = require('koa-router')
 const bodyParser = require('koa-bodyparser')
 
+// Koa app
 const app = new Koa()
 const router = new KoaRouter()
+
+// Import controllers
+const rootController = require('./controllers/root.controller')
 
 // JSON prettier middleware
 app.use(json())
@@ -24,13 +28,8 @@ app.on('error', function (error, ctx) {
   return ctx
 })
 
-// Handle Routes
-router.get('/', (ctx) => {
-  console.log('Here...')
-  ctx.response.status = 200
-  ctx.body = 'Hello World!'
-  return ctx
-})
+// Bind controllers to routes
+router.get('/', rootController.helloWorld)
 
 const PORT = process.env.port || 8000
 app.listen(PORT, function () {
