@@ -1,0 +1,28 @@
+{
+  "name": "uniplato-backend",
+  "version": "0.0.1",
+  "description": "Hiring challenge Uniplato ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohammadmoozeh/uniplato-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohammadmoozeh/uniplato-backend/issues"
+  },
+  "homepage": "https://github.com/mohammadmoozeh/uniplato-backend#readme",
+  "dependencies": {
+    "eslint": "^7.23.0",
+    "koa": "^2.13.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-json": "^2.0.2",
+    "koa-router": "^10.0.0"
+  },
+  "devDependencies": {}
+}
